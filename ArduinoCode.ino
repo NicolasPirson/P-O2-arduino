@@ -1,11 +1,12 @@
 #include <PWMSoft.h>
 #include <SoftwareSerial.h>
 
-int Duwmotor;
-int Versnel_Motor;
-int Servo;
-int Speed_Trigger_1;
-int Speed_Trigger_2;
+
+int Duwmotor = ;
+int Versnel_Motor = ;
+int Servo = ;
+int Speed_Trigger_1 = ;
+int Speed_Trigger_2 = ;
 
 void setup(){
   pinMode(Servo,OUTPUT);
@@ -13,10 +14,19 @@ void setup(){
   pinMode(Versnel_Motor,OUTPUT);
   pinMode(Speed_Trigger_1,INPUT);
   pinmode(Speed_Trigger_2,INPUT);
+  
+  //interrupts
+  pinMode(2,INPUT);
+  pinMode(3,INPUT);
+  attachInterrupt(0,powerOnOff,RISING);
+  attachInterrupt(1,homePosition,RISING);
+  
+  
 
 }
 
 void loop(){
+  checkBluetooth();
   
 }
 
@@ -36,3 +46,17 @@ void SnelheidMeting(){
   verlopen_tijd = finish-start
   snelheid = 0.04/verlopen_tijd*(pow(10,-3)) // met afstand = de afstand tussen de 2 gaten = 4cm
 }
+void checkBluetooth() {
+  
+  while (bluetoothSerial.available())
+  {
+    char c = blutoothSerial.read();
+    command +- c;
+    
+    
+  
+  }
+  
+    
+         
+         
