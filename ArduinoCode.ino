@@ -51,8 +51,9 @@ void checkBluetooth() {
   while (bluetoothSerial.available())
   {
     char c = blutoothSerial.read();
-    command +- c;
-    
+    command += c;
+  }
+  if (command.length() > 0)
     
   
   }
