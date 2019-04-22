@@ -8,6 +8,7 @@ int Versnel_Motor = ;
 int Servo = ;
 int Speed_Trigger_1 = ;
 int Speed_Trigger_2 = ;
+int ledGreen = ;
 
 void setup(){
   pinMode(Servo,OUTPUT);
@@ -21,6 +22,8 @@ void setup(){
   pinMode(3,INPUT);
   attachInterrupt(0,powerOnOff,RISING);
   attachInterrupt(1,homePosition,RISING);
+  //power aan/ arduino start => groene led aan?
+  digitalWrite(ledGreen,HIGH);
   
   
 
@@ -93,14 +96,10 @@ void checkBluetooth() {
       
        
           
-          
-        
-            
-          
-      }
+
     }
-    else if (command.startsWith
-          
+    else if (command.startsWith){
+      
           
           
           
