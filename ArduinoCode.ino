@@ -1,8 +1,9 @@
 #include <PWMSoft.h>
 #include <SoftwareSerial.h>
+#include <math.h>
 
 
-int Duwmotor = ;
+int Duwmotor = ;       //insert default values
 int Versnel_Motor = ;
 int Servo = ;
 int Speed_Trigger_1 = ;
@@ -53,7 +54,76 @@ void checkBluetooth() {
     char c = blutoothSerial.read();
     command += c;
   }
-  if (command.length() > 0)
+  if (command.length() > 0){
+    
+    if (command.startsWith("COORD/")){// coördinaten voor pingpongtafel
+      vervolg = command.substring(command.indefOf("/") + 1);
+      if (vervolg == "RANDOM" ){
+        x = (rand()%100 + 1); // willekeurige waarde tussen 1 en 100
+        y = (rand()%100 + 1); // zelfde
+        
+        int Versnel_Motor = sqrt((pow(x,2))+(pow(y,2))); // aanpassen om juiste snelheid te krijgen, waarschijnlijk vermenigvuldigen
+        //met waarde om in verhouding te brengen met bord
+        int Servo = atan(y/x);
+      }
+      else if (vervolg == "pos1"){//
+        int Versnel_Motor = ;//waarde invoegen
+        int Servo = ;
+      }
+      else if (vervolg == "pos2"){
+        int Versnel_Motor = ;//waarde invoegen
+        int Servo = ;
+      }
+      else if (vervolg == "pos3"){
+        int Versnel_Motor = ;//waarde invoegen
+        int Servo = ;
+      }
+      else if (vervolg == "pos4"){
+        int Versnel_Motor = ;//waarde invoegen
+        int Servo = ;
+      }
+      else if (vervolg == "pos5"){
+        int Versnel_Motor = ;//waarde invoegen
+        int Servo = ;
+      }
+      else if (vervolg == "pos6"){
+        int Versnel_Motor = ;//waarde invoegen
+        int Servo = ;
+      }
+      
+       
+          
+          
+        
+            
+          
+      }
+    }
+    else if (command.startsWith
+          
+          
+          
+          
+          
+          
+     
+    
+    
+
+          
+        
+        
+        
+        
+        
+      
+        
+          
+  
+        
+        
+      
+      
     
   
   }
