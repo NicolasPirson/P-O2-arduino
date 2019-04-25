@@ -149,7 +149,7 @@ void checkBluetooth() {
         Servo_Angle = atan(y/x);
         Duwmotor_Speed = 0;
       }
-      else if (vervolg == "pos1"){//
+      else if (vervolg == "pos1"){
         Versnel_Motor_Speed = 0;//waarde invoegen
         Servo_Angle = 0;
         Duwmotor_Speed = 0;
