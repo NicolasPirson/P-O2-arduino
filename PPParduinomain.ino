@@ -147,49 +147,65 @@ void checkBluetooth() {
         Versnel_Motor_Speed = sqrt((pow(x,2))+(pow(y,2))); // aanpassen om juiste snelheid te krijgen, waarschijnlijk vermenigvuldigen
         //met waarde om in verhouding te brengen met bord
         Servo_Angle = atan(y/x);
-        Duwmotor_Speed = 0;
+        Versnel_Motor_Speed = 0;
       }
       else if (vervolg == "pos1"){
         Versnel_Motor_Speed = 0;//waarde invoegen
         Servo_Angle = 0;
-        Duwmotor_Speed = 0;
+        Versnel_Motor_Speed = 0;
         End_command();
       }
       else if (vervolg == "pos2"){
         Versnel_Motor_Speed = 0;//waarde invoegen
         Servo_Angle = 0;
-        Duwmotor_Speed = 0;
+        Versnel_Motor_Speed = 0;
         End_command();
       }
       else if (vervolg == "pos3"){
         Versnel_Motor_Speed = 0;//waarde invoegen
         Servo_Angle = 0;
-        Duwmotor_Speed = 0;
+        Versnel_Motor_Speed = 0;
         End_command();
       }
       else if (vervolg == "pos4"){
         Versnel_Motor_Speed = 0;//waarde invoegen
         Servo_Angle = 0;
-        Duwmotor_Speed = 0;
+        Versnel_Motor_Speed = 0;
         End_command();
       }
       else if (vervolg == "pos5"){
         Versnel_Motor_Speed = 0;//waarde invoegen
         Servo_Angle = 0;
-        Duwmotor_Speed = 0;
+        Versnel_Motor_Speed = 0;
         End_command();
       }
       else if (vervolg == "pos6"){
         Versnel_Motor_Speed = 0;//waarde invoegen
         Servo_Angle = 0;
-        Duwmotor_Speed = 0;
+        Versnel_Motor_Speed = 0;
         End_command();
       }     
 
     }
-    /*else if (command.startsWith){
-      pass
-    }*/
+    else if (command.startsWith("DIFF/"){
+      String vervolg = command.substring(command.indexOf("/") + 1);
+      if (vervolg == "EASY"){
+        Duwmotor_Speed = 0;//waarde invoegen
+        End_command();
+      }
+      else if (vervolg == "NORMAL"){
+        Duwmotor_Speed = 0;//waarde invoegen
+        End_command();
+      }
+      else if (vervolg == "HARD"){
+        Duwmotor_Speed = 0;//waarde invoegen
+        End_command();
+      }
+    }
+    else if (command.startsWith("QUIT"){
+      //interrupt invoegen om alles te stoppen
+    }
+             
     Serial.println("Ontvangen commando: " + command);
     command = ""; // klaar om een nieuw commando te ontvangen
 
