@@ -98,7 +98,12 @@ void checkBluetooth() {
           
 
     }
-    else if (command.startsWith){
+    else if (command.startsWith("QUIT"){
+      int Versnel_Motor = 0;
+      int Servo = ;//hoek waardoor recht vooruit mikt
+    }
+            
+    else if (command.startsWith("
       
           
           
