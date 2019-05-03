@@ -9,17 +9,17 @@ int Servo = ;
 int Speed_Trigger_1 = ;
 int Speed_Trigger_2 = ;
 int ledGreen = ;
+String command;
 
 void setup(){
-  pinMode(Servo,OUTPUT);
-  pinMode(Duwmotor,OUTPUT);
-  pinMode(Versnel_Motor,OUTPUT);
-  pinMode(Speed_Trigger_1,INPUT);
-  pinmode(Speed_Trigger_2,INPUT);
+  //pins invoeren
+  pinMode(7,OUTPUT);//Servo
+  pinMode(Duwmotor,OUTPUT);//Duwmotor
+  pinMode(Versnel_Motor,OUTPUT);//Versnel_Motor
+  pinMode(2,INPUT);//Speed_Trigger_1
+  pinmode(3,INPUT);//Speed_Trigger_1
   
   //interrupts
-  pinMode(2,INPUT);
-  pinMode(3,INPUT);
   attachInterrupt(0,powerOnOff,RISING);
   attachInterrupt(1,homePosition,RISING);
   //power aan/ arduino start => groene led aan?
@@ -103,7 +103,18 @@ void checkBluetooth() {
       int Servo = ;//hoek waardoor recht vooruit mikt
     }
             
-    else if (command.startsWith("
+    else if (command.startsWith("DIFF")){
+      vervolg = command.substring(command.indefOf("/") + 1);
+      if (vervolg == "EASY"){
+        int Duwmotor = ;//snelheid of frequentie invoeren
+      }
+      else if (vervolg == "NORMAL"){
+        int Duwmotor = ;//snelheid of frequentie invoeren
+      }
+      else if (vervolg == "HARD"){
+        int duwmotor = ;//snelheid of frequentie invoeren
+     
+    
       
           
           
